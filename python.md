@@ -135,26 +135,64 @@ Concatenating using `.join` method
 # result is 'pamparampampam'
 ```
 
-#### Formatting strings
+#### Strings and Indices
+Each character in a string has an index number
+Numbers start at `0`
+``` python
+"Michal"[1] 		# = "i"
+"Michal"[-2] 		# = "a"
+```
+
+#### Formatting Strings
 ``` python
 a_number = 10
 formatted_string = f"I am adding number {a_number} to a string."
 ```
 
+#### Getting User Input
+``` python
+my_variable = input("Write something: ")
+```
+The result is string
 
 
+### Boolean Logic
 
+#### Conditional Statements
+``` python
+if a > 10:					# there has to be exactly one if
+	print("a is big")
+elif a >= 0:				# elif is optional, there can be many of them
+	print("a is small")
+else:						# else is optional, there can be only one
+	print("a is negative")
+```
 
+Truthiness - empty objects (including strings), `None`, `0` return `False` in conditinal statements
 
+#### Operators
+- `==` - is equal to (checking values)
+- `is` - is equal to (checking if it's stored in the same place in memory), used for comparing to `None`	
+- `!=` - is not equal to
+- `>` - greater than 
+- `<` - smaller than
+- `>=` - greater or equal to 
+- `<=` - smaller or equal to
+- Logical operators: `and`, `or`, `not`
 
+``` python
+a = 1
+a == 1			# True
+a is 1			# True
 
+b = [1, 2, 3]
+c = [1, 2, 3]
+b == c			# True
+b is c			# False
 
-
-
-
-
-
-
+d = b
+b is d			# True
+```
 
 
 
