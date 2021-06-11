@@ -195,6 +195,72 @@ b is d			# True
 ```
 
 
+### Loops
+
+#### `for` Loop
+``` python
+for letter in "Hello world!":
+	print(letter)
+```
+
+``` python
+for number in range(1, 12):
+	print(number)
+```
+
+``` python
+for item in [2, 8, 6, 12]:
+	print(item)
+```
+
+#### `while` Loop
+``` python
+while boolean_expression:
+	print("Hello!")
+	# repeat until boolean_expression == False
+```
+This loop can go on forever; `ctrl+c` to exit
+
+#### Breaking a Loop with `break`
+``` python
+while True:
+	msg = input("Type something: ")
+	if msg == "exit":
+		break		# immediately exits loop 
+```
+Works with both `for` and `while` loops
+
+
+
+
+
+#### Ranges
+A range is a slice in the number line
+``` python
+range(5)
+# 0, 1, 2, 3, 4
+```
+
+``` python
+range(3, 7)
+# 3, 4, 5, 6
+```
+
+``` python
+range(1, 10, 2)
+# 1, 3, 5, 7, 9
+```
+
+``` python
+range(2, -3, -1)
+# 2, 1, 0, -1, -2
+```
+
+
+
+
+
+
 
 ### Functions
 
