@@ -274,7 +274,6 @@ my_list.reverse()					# reverse order of a list (in place)
 my_list.sort()						# sort itms in a list (in place) in ascending order
 ```
 
-
 #### Accessing Values in a List
 ``` python
 my_list = list(range(1, 16))
@@ -292,8 +291,46 @@ element_6_to_10_step2 = my_list[5:10:2]
 element_from_4_step2 = my_list[3::2]
 ```
 
+#### List Comprehensions
+``` python
+[transformation(element) for element in my_list]
+```
+Result is always a list
 
+Examples
+``` python
+my_list = [1, 2, 3, 4, 5]
+new_list = [x**2 for x in my_list]
+```
 
+List Comprehension with conditional logic
+``` python
+nums = list(range(20))
+
+odds_squared = [num**2 for num in nums if num % 2 == 1]
+
+new_list = [num*2 if num % 2 == 0 else num/2 fir num in nums]
+```
+
+``` python
+full_text = "I am surprised that this works!"
+
+''.join(char for char in full_text if char ot in "aeiou")
+```
+
+#### Nested Lists
+```python
+nested_list = [[11, 12, 13], [21, 22, 23], [31, 32, 33]]
+
+element_2_3 = nested_list[1][2]
+```
+slicing works only for most outer list
+looping requires nested looping
+
+Nested List Comprehension
+``` python
+[[transformation(element) for element in inner_list] for inner_list in outer_list]
+```
 
 ### Loops
 
