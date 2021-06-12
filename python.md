@@ -54,9 +54,13 @@ Python is a dynamic typing language, which means that you don't have to set data
 ### Printing
 ``` python
 print("Some text")
+```
 
+``` python
 print(3.14)
+```
 
+``` python
 my_text = "Some other text"
 print(my_text)
 ```
@@ -88,9 +92,13 @@ Order of operations (typical math):
 ### Strings
 ``` python
 string_1 = "String in double quotes"
+```
 
+``` python
 string_2 = 'String in single quotes'
+```
 
+``` python
 string_3 = "String with 'quotation' inside of it"
 ```
 
@@ -131,8 +139,11 @@ variable_1 + str(number_variable)
 
 Concatenating using `.join` method
 ``` python
-'any string in here or empty space'.join('pam', 'param', 'pampam')
+''.join(['pam', 'param', 'pampam'])
 # result is 'pamparampampam'
+
+'_'.join(['pam', 'param', 'pampam'])
+# result is 'pam_param_pampam'
 ```
 
 #### Strings and Indices
@@ -149,11 +160,18 @@ a_number = 10
 formatted_string = f"I am adding number {a_number} to a string."
 ```
 
+String Methods
+``` python
+my_string.upper()		# uppercase
+my_string.lower()		# lowercase
+```
+
 #### Getting User Input
 ``` python
 my_variable = input("Write something: ")
 ```
 The result is string
+
 
 
 ### Boolean Logic
@@ -193,6 +211,88 @@ b is c			# False
 d = b
 b is d			# True
 ```
+
+### Lists
+`list` - a collection of items with an order; `array` in many other languages
+`[item_1, item_2, item_3]`
+
+``` python
+ list_1 = [item_1, item_2, item_3]
+```
+
+``` python
+ list_2 = [2, 4, 6, 8, 0]
+```
+
+``` python
+ list_3 = ['string 1', 'string 2', 'string 3', 'string 4']
+```
+
+``` python
+ list_4 = [variable_1, 32.2, "string"]
+```
+
+``` python
+ list_5 = list(range(5))
+```
+
+``` python
+ empty_list = []
+```
+
+#### Functions and methods
+``` python
+ element in my_list										# checks if element is in my_list
+ 
+ my_list[index] = new_value								# updating values
+ my_list[n1], my_list[n2] = my_list[n2], my_list[n1]	# swaping elements
+
+ len(my_list)											# number of elements in a list
+ ```
+ 
+ ``` python
+ my_list.append(new_element)		# adds an item to the end of the list
+ my_list.extend(new_list)			# adds new_list as elements to the end of the list
+ my_list.insert(index, new_element)	# adds new_element at the index position
+ ```
+ 
+ ``` python
+ my_list.clear()					# removes all elements from a list
+ my_list.pop(i)						# removes element at index i from a list
+ my_list.remove(x)					# removes the first value x in a list and remove it
+```
+`pop` returns the deleted item so that can be stored in a variable; if no `i` is given, it pops the last item in the list
+`remove` doesn't return the value
+
+``` python
+my_list.index(x)					# returns first index where value x is stored
+my_list.index(x, start)				# returns first index after start (inclusive) where value x is stored
+my_list.index(x, start, end)		# returns first index between start and end where value x is stored
+
+my_list.count(x)					# returns number of occurences of x in a list
+my_list.reverse()					# reverse order of a list (in place)
+my_list.sort()						# sort itms in a list (in place) in ascending order
+```
+
+
+#### Accessing Values in a List
+``` python
+my_list = list(range(1, 16))
+
+element = my_list[index]					# indexing starts at 0
+
+element_1 = my_list[0]
+element_last = my_list[-1]
+
+element_6_to_10 = my_list[5:10]
+element_from_4 = my_list[3:]
+element_to_9 = my_list[:9]
+
+element_6_to_10_step2 = my_list[5:10:2]
+element_from_4_step2 = my_list[3::2]
+```
+
+
 
 
 ### Loops
