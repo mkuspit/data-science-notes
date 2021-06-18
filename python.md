@@ -102,6 +102,10 @@ string_2 = 'String in single quotes'
 string_3 = "String with 'quotation' inside of it"
 ```
 
+``` python
+string_4 = chr(number) # number is ASCII code
+```
+
 #### Python escape sequences
 ``` python
 \\ 				# Backslash
@@ -218,25 +222,15 @@ b is d			# True
 
 ``` python
  list_1 = [item_1, item_2, item_3]
-```
 
-``` python
  list_2 = [2, 4, 6, 8, 0]
-```
 
-``` python
  list_3 = ['string 1', 'string 2', 'string 3', 'string 4']
-```
 
-``` python
  list_4 = [variable_1, 32.2, "string"]
-```
 
-``` python
  list_5 = list(range(5))
-```
 
-``` python
  empty_list = []
 ```
 
@@ -257,9 +251,9 @@ b is d			# True
  ```
  
  ``` python
- my_list.clear()					# removes all elements from a list
- my_list.pop(i)						# removes element at index i from a list
- my_list.remove(x)					# removes the first value x in a list and remove it
+my_list.clear()						# removes all elements from a list
+my_list.pop(i)						# removes element at index i from a list
+my_list.remove(x)					# removes the first value x in a list and remove it
 ```
 `pop` returns the deleted item so that can be stored in a variable; if no `i` is given, it pops the last item in the list
 `remove` doesn't return the value
@@ -367,10 +361,6 @@ while True:
 ```
 Works with both `for` and `while` loops
 
-
-
-
-
 #### Ranges
 A range is a slice in the number line
 ``` python
@@ -394,8 +384,220 @@ range(2, -3, -1)
 ```
 
 
+### Dictionaries
+Data structure consisting of key value pairs
+- keys - describe data
+- values - represent data
+
+``` python
+my_dictionary = {
+	key_1: value_1,
+	key_2: value_2,
+	key_3: value_3,
+	key_4: value_4
+}
+```
+keys are almost always strings of numbers
+values can be any data structure
+
+``` python
+my_dictionary = dict(
+	key_1 = value_1,	# key_1 is the actual value, no variable name
+	key_2 = value_2		# key_2 is the actual value, no variable name
+)
+```
+
+``` python
+list_1 = ["CA", "NJ", "RI"]
+list_2 = ["California", "New Jersey", "Rhode Island"]
+ 
+my_dictionary = dict(zip(list_1,list_2))  
+```
+
+Accessing values
+``` python
+my_dict[my_key]
+```
+
+Adding new data
+``` python
+my_dict[my_key] = value_1
+```
+
+#### Functions and methods
+``` python
+my_dictionary.values()
+my_dictionary.keys()
+my_dictionary.items()
+
+element in my_disctionary		# checks if element is in keys
+element in my_disctionary.keys()		# checks if element is in keys
+element in my_disctionary.values()		# checks if element is in values
+
+my_dictionary.clear()		# clears all keys and values in a dictionary
+my_dictionary.copy()		# makes a copy of a dictionary, can be assigned to new variable
+my_dictionary.pop(key_1)		# removes entry corresponding to key_1, returns the value
+my_dictionary.popitem()		# removes a random entry from a dictionary
+my_dictionary.update(dictionary_2)		# update a dictionary with another dictionary
 
 
+new_dict = {}.fromkeys(["key_1", "key_2", "key_3"], "default_value")
+# or
+new_dict = dict.fromkeys(["key_1", "key_2", "key_3"], "default_value")
+
+my_dictionary.get("key_value")		# a safer way of retrieving data form a dictionary
+
+```
+
+#### Looping over dictionaries
+``` python
+for v in my_dictionary.values():
+	print(v)
+```
+
+``` python
+for k in my_dictionary.keys():
+	print(k)
+```
+
+``` python
+for k, v in my_dictionary.items():
+	print(k)
+	print(v)
+```
+
+#### Dictionary comperhensions
+``` python
+{key: value for item in iteratable_object}
+```
+
+``` python
+numbers = {'first': 1, 'second': 2, 'third': 3}
+squared_numbers = {key: value ** 2 for key, value in numbers.items()}
+```
+
+``` python
+numbers = [1, 2, 3, 4]
+squared_numbers_2 = {num: num ** 2 for num in numbers}
+```
+
+``` python
+string_1 = 'ABCD'
+string_2 = '1234'
+my_dict = {string_1[i]: string_2[i] for i in range(len(string_1))}
+```
+
+``` python
+numbers_2 = list(range(12))
+even_odd = {num:('even' if num % 2 == 0 else 'odd') for num in numbers_2}
+```
+
+
+### Tuples
+Ordered collection or grouping of items. 
+Tuples are immutable, can't be changed
+Tuples are faster than lists
+Tuples be keys in a dictionary (lists can't)
+
+``` python
+tuple_1 = (item_1, item_2, item_3)
+
+tuple_2 = (2, 4, 6, 8, 0)
+
+tuple_3 = ('string 1', 'string 2', 'string 3', 'string 4')
+
+tuple_4 = (variable_1, 32.2, "string")
+
+tuple_5 = tuple(item_1, item_2, item_3)
+```
+
+``` python
+item in my_tuple	# checking if item is in tuple
+len(my_tuple)		# returns number of elements
+
+my_tuple.count(my_item)		# returns the number of occurences of my_item
+my_tuple.index(my_item)		# returns the first index number of my_item
+```
+
+``` python
+my_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+
+for num in my_tuple:
+	print(num)
+```
+
+``` python
+my_tuple = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10)
+i = 11
+
+while i >= 0:
+	print(my_tuple[i])
+	i -= 1
+```
+
+#### Accessing Values in a Tuple
+``` python
+element = my_tuple[index]					# indexing starts at 0
+
+element_1 = my_tuple[0]
+element_last = my_tuple[-1]
+
+element_6_to_10 = my_tuple[5:10]
+element_from_4 = my_tuple[3:]
+element_to_9 = my_tuple[:9]
+
+element_6_to_10_step2 = my_tuple[5:10:2]
+element_from_4_step2 = my_tuple[3::2]
+```
+
+
+
+
+### Sets
+Sets are like formal mathematical sets:
+- Collection of data that has no duplicate values, every item is unique
+- Sets don't have any order
+
+``` python
+set_1 = {item_1, item_2, item_3}
+
+set_2 = set({item_1, item_2, item_3})
+
+set_3 = (variable_1, 32.2, "string")
+
+set_4 = {2, 4, 6, 8, 8} 	# set will remove duplicated values
+```
+
+``` python
+item in my_set		# checking if item is in my_set
+len(my_set)			# returns number of elements
+
+my_set.add(my_item)		# adds an item to a set
+my_set.remove(my_item)		# removes an item from a set, returns an error is my_item is not in a set
+my_set.discard(my_item)		# removes an item from a set
+my_set.copy()		# makes a copy of a set, can be assigned to a new variable
+my_set.clear()		# removes all items from a set
+
+set_1 | set_2		# union of sets (or)
+set_1 & set_2		# intersection of sets (and)
+set_1 - set_2		# symmetric difference (set_1 to set_2)
+```
+
+``` python
+my_set = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+for num in my_set:
+	print(num)
+```
+
+#### Set comperhensions
+``` python
+my_set = {transformation for item in iteratable_object}
+```
+
+``` python
+my_set = {x**2, for x in range(10)}
+```
 
 
 
