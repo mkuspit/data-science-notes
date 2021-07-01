@@ -242,19 +242,19 @@ b is d			# True
  my_list[n1], my_list[n2] = my_list[n2], my_list[n1]	# swaping elements
 
  len(my_list)											# number of elements in a list
- ```
- 
+```
+
  ``` python
  my_list.append(new_element)		# adds an item to the end of the list
  my_list.extend(new_list)			# adds new_list as elements to the end of the list
  my_list.insert(index, new_element)	# adds new_element at the index position
  ```
- 
+
  ``` python
 my_list.clear()						# removes all elements from a list
 my_list.pop(i)						# removes element at index i from a list
 my_list.remove(x)					# removes the first value x in a list and remove it
-```
+ ```
 `pop` returns the deleted item so that can be stored in a variable; if no `i` is given, it pops the last item in the list
 `remove` doesn't return the value
 
@@ -603,15 +603,101 @@ my_set = {x**2, for x in range(10)}
 
 ### Functions
 
+Function - a process for executing a task
+
 ``` python
-def function(arg_1, arg_2):
+def my_function(arg_1, arg_2):
 	result = (arg_1 + arg_2)**2
 	return result
 
-function(a, b)
+my_function(a, b)
 # or
-print(function(a, b))
+print(my_function(a, b))
 ```
+
+``` python
+def function_without_args():
+    return "Hello world!"
+```
+
+```python
+def function_with_default_arg(arg_1, arg_2 = 0):
+	return (arg_1 + arg_2)**2
+```
+
+```python
+def printing_function():
+	print("That's a result of a function")
+```
+
+`return` - keyword in function that defines what the output of a function is. Tuples can be returned as well as single objects
+
+- parameter - a variable in a method (or function) definition
+- argument - passed into method's (function's) parameter
+
+```python
+def add(a, b):
+    return a+b
+
+def subtract(a, b):
+    return a-b
+
+def math(a, b, fun):
+    return fun(a, b)
+```
+
+
+
+Keyword arguments
+
+```python
+def my_function(a, b):
+	return (a + b)*(a - b)
+
+my_function(b = 3, a = 1) # it will work
+```
+
+
+
+documenting functions
+
+```python
+def my_function(a):
+    """This is a text explaining what this function does"""
+    return a**3
+
+my_function.__doc__ # returns the docstring
+```
+
+
+
+#### Scope
+
+- variables created inside functions are available only in those functions
+- global scope - defined outside any function or object global variables shouldn't be used inside functions
+
+```python
+total = 0
+
+def increment():
+    global total
+    total += 1
+    return total
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+___
 
   
 
@@ -676,7 +762,7 @@ for _ in range(5):
 	print("Some text")
 ```
 
-  
+
 ## Errors
 1. Syntax error - statements aren't well formed
 2. Runtime error - illegal operation (dividing by 0)
