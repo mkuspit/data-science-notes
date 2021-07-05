@@ -164,10 +164,11 @@ a_number = 10
 formatted_string = f"I am adding number {a_number} to a string."
 ```
 
-String Methods
+String Methods and functions
 ``` python
 my_string.upper()		# uppercase
 my_string.lower()		# lowercase
+len(my_string)			# number of characters in a string
 ```
 
 #### Getting User Input
@@ -242,6 +243,7 @@ b is d			# True
  my_list[n1], my_list[n2] = my_list[n2], my_list[n1]	# swaping elements
 
  len(my_list)											# number of elements in a list
+
 ```
 
  ``` python
@@ -617,7 +619,7 @@ print(my_function(a, b))
 
 ``` python
 def function_without_args():
-    return "Hello world!"
+	return "Hello world!"
 ```
 
 ```python
@@ -687,11 +689,94 @@ def increment():
 
 
 
+#### *args
+
+*args allows to put unspecified number of arguments to a function
+
+```python
+def my_function(*args):		# any name as long as starts with *
+    print(args) 			# args is a tuple
+```
+
+```python
+def my_sum(*nums):
+	total = 0
+    for i in nums:
+        total += i
+    return total
+```
+
+```python
+def my_fun_2(arg_1, *args):
+    my_list = []
+    for i in args:
+        my_list.append(arg_1 + i)
+    return my_list
+```
 
 
 
+tuple / list unpacking
+
+```python
+def my_sum(*args):
+	total = 0
+    for i in args:
+        total += i
+    return total
+
+nums_1 = [1, 2, 3, 4, 5]
+my_sum(*nums_1)
+
+nums_2 = (1, 2, 3, 4, 5)
+my_sum(*nums_2)
+```
 
 
+
+#### **kwargs
+
+**kwargs allows to put unspecified number of dictionary arguments to a function
+
+```python
+def my_fun_1(**kwargs):
+	print(kwargs)
+```
+
+```python
+def my_fun_2(**kwargs):
+	print(kwargs.keys())
+```
+
+
+
+dictionary unpacking
+
+```python
+def my_fun_3(**kwargs):
+	for name, number in kwargs.items():
+		print(f"{name} is numeric {number}")
+
+nums = {"one":1, "two":2, "three":3}
+my_fun_3(**nums)
+```
+
+```python
+def equation(n_1, n_2, n_3):
+    return (n_1 + n_2)**n_3
+
+data = dict(a=2, b=4, c=3)
+equation(**data)
+```
+
+
+
+#### Parameter ordering
+
+1. parameters
+2. *args
+3. default parameters
+4. **kwargs
 
 
 
@@ -704,47 +789,79 @@ ___
 
 Keywords
 - `and`
+
 - `as`
+
 - `assert`
+
 - `break`
+
 - `class`
+
 - `continue`
+
 - `def`
+
 - `del`
+
 - `elif`
+
 - `else`
+
 - `except`
+
 - `exec`
+
 - `finally`
+
 - `for`
+
 - `from`
+
 - `global`
+
 - `if`
+
 - `import`
+
 - `in`
+
 - `is`
+
 - `lambda`
+
 - `nonlocal`
+
 - `not`
+
 - `or`
+
 - `pass`
+
 - `raise`
+
 - `return`
+
 - `try`
+
 - `while`
+
 - `with`
+
 - `yield`
+
 - `True`
+
 - `False`
+
 - `None`
 
-``` python
-len(my_string) 			# number of characters in a string
-input("Some text: ")	# collects data from user. Result is string
-```
+    
 
+    
 
-Importing
+    ## Importing
+
 ``` python
 import module
 
@@ -754,13 +871,6 @@ from module import element
 ```
 
   
-
-## Repetition
-
-``` python
-for _ in range(5):
-	print("Some text")
-```
 
 
 ## Errors

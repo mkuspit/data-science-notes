@@ -2,18 +2,28 @@
 
 ## Theory
 ### Deep neural networks notation
-- $L$ - number of layers in the network (excluding input layer, including output layer) 
+- $L$ number of layers in the network (excluding input layer, including output layer) 
+
 - $n^{[l]}$ - number of units in l-th layer
+
 - $n^{[0]} = n_x$ - number of features
+
 - $a^{[l]}$ - number of activations in l-th layer $a^{[l]} = g^{[l]}(z^{[l]})$
+
 - $W^{[l]}$, $b^{[l]}$ - weights for l-th layer
+
 - $a^{[0]} = x$
+
 - $a^{[L]} = \hat{y}$
 
   Matrix dimensions
+  
 - $W^{[l]}$ : ($n^{[l]}$, $n^{[l-1]}$)
+
 - $b^{[l]}$ : ($n^{[l]}$, 1)
+
 - $z^{[l]}$ : ($n^{[l]}$, 1)
+
 - $a^{[l]}$ : ($n^{[l]}$, 1)
 
 Vectorized across dataset
@@ -61,7 +71,7 @@ Leaky ReLU
 $a(z) = max(\\frac{z}{100}, z)$
 $\frac{dz}{d}a(z) = \begin{cases}1 \quad \text{for z > 0} \\ \frac{1}{100} \quad \text{for z < 0} \end{cases}$
 
-  
+
 For deep NNs, if there are no activation functions (identity activation function) then the result is as if there were no hidden layers. Only makes sense if problem is a regression problem.
 
 `Sigmoid` should only be used in the output layer due to easier interpretability. For hidden layers, `tanh` is a better performing option. The default activation function should be (leaky)\`ReLU\`.
@@ -115,14 +125,6 @@ For deep NNs, if there are no activation functions (identity activation function
  \- Dev test error is high
 
  \- Ways of handling: more data, regularization, different NN architecture
-
-  
-
-  
-
-  
-
-  
 
 ## NumPy implementation
 
