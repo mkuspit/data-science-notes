@@ -780,6 +780,66 @@ equation(**data)
 
 
 
+#### Lambdas
+
+lambdas are single line functions that have no name
+
+```python
+lambda param: param * 3
+```
+
+```python
+add = lambda a, b: a + b
+
+add(2, 4)
+
+print(add.__name__)			# <lambda> 
+```
+
+most common use-case: then a function has another function as a parameter
+
+
+
+#### Some built in functions
+
+`map` - a standard function that accepts at least two arguments: a function and an iterable object. It runs the function on each element in the iterable object and returns a map object. Often uses `lambda` as the function parameter
+
+```python
+my_map = map(my_function, my_object)
+```
+
+```python
+def my_function(a):
+    return (a / 2)**2
+my_nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+my_map_1 = map(my_function, my_nums)
+```
+
+```python
+my_nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+my_map_2 = map(lambda x: (x + 2)**3, my_nums)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ___
