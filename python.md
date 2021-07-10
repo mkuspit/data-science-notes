@@ -217,7 +217,20 @@ d = b
 b is d			# True
 ```
 
+```python
+a = True
+b = True
+c = False
+
+a and b		# True
+a or c		# True
+not c		# True
+```
+
+
+
 ### Lists
+
 `list` - a collection of items with an order; `array` in many other languages
 `[item_1, item_2, item_3]`
 
@@ -449,6 +462,7 @@ new_dict = dict.fromkeys(["key_1", "key_2", "key_3"], "default_value")
 
 my_dictionary.get("key_value")		# a safer way of retrieving data form a dictionary
 
+len(my_dictionary)		# number of keys
 ```
 
 #### Looping over dictionaries
@@ -824,9 +838,91 @@ my_map_2 = map(lambda x: (x + 2)**3, my_nums)
 
 
 
+`filter` - a standard function that allows to filter values out of an iterable object based on a scecific expression / condition (a function with boolean result)
+
+```python
+my_filter = filter(my_function, my_object)
+```
+
+```python
+my_nums = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+my_filter = filter(lambda x: x % 2 == 0, my_nums)
+```
 
 
 
+`any` - function that takes an iterable object as input and returns `True` if at least one element in that object is "truthy"
+
+
+
+`all` - function that takes an iterable object as input and returns `True` if all elements in that object are "truthy"
+
+
+
+`sorted` - function that returns a new sorted list from an iterable object. Doesn't change the original object
+
+```python
+nums = [2, 5, 1, 7, 3, 4, 0, 6]
+sorted_nums = sorted(nums)
+
+descending_sorted = sorted(nums, reverse = True)
+```
+
+```python
+my_users = [
+	{"name":"Adam", "number":4},
+    {"name":"Celine", "number":3},
+    {"name":"Donald", "number":2},
+    {"name":"Burt", "number":1},
+]
+
+sorted_users = sorted(my_users, key = lambda user: user['name'])
+```
+
+
+
+`min` and `max` - returns the smallest (largest) element in an iterable object or 2+ objects provided as an agument
+
+```python
+names = ['Adam', 'Tom', 'Daniel', 'Greg', 'Mike']
+
+longest_name = max(names, key = lambda n: len(n))
+```
+
+```python
+my_users = [
+	{"name":"Adam", "number":4},
+    {"name":"Celine", "number":3},
+    {"name":"Donald", "number":2},
+    {"name":"Burt", "number":1},
+]
+
+smallest_user = min(my_users, key = lambda user: user['number'])
+```
+
+
+
+`reversed` - returns a reversed iterable object
+
+
+
+`len` - returns a length (number of items) of an object. uses a `__len__` method of that object
+
+
+
+ 
+
+#### Generator expressions
+
+list comprehensions that are not lists. temporary objects that are usually passed to a function, not for storage. 
+
+```python
+nums = [1, 2, 3, 4, 5, 6] 
+
+my_list_comp = [n**2 for n in nums]
+my_genexpr = (n**2 for n in nums)
+```
 
 
 
@@ -924,10 +1020,8 @@ Keywords
 
 ``` python
 import module
-
 from module import element
-
- from module import \*
+from module import \*
 ```
 
   
